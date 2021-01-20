@@ -61,12 +61,21 @@ void testINT(void)
 
 void testLONG(void)
 {
+#if (__WORDSIZE == 64)
+    CU_ASSERT(8 == sizeof(long));
+    CU_ASSERT(8 == sizeof(long int));
+    CU_ASSERT(8 == sizeof(signed long));
+    CU_ASSERT(8 == sizeof(signed long int));
+    CU_ASSERT(8 == sizeof(unsigned long));
+    CU_ASSERT(8 == sizeof(unsigned long int));
+#else
     CU_ASSERT(4 == sizeof(long));
     CU_ASSERT(4 == sizeof(long int));
     CU_ASSERT(4 == sizeof(signed long));
     CU_ASSERT(4 == sizeof(signed long int));
     CU_ASSERT(4 == sizeof(unsigned long));
     CU_ASSERT(4 == sizeof(unsigned long int));
+#endif
 }
 
 void testLLONG(void)
@@ -103,7 +112,7 @@ int main(void)
         return CU_get_error();
 
    /* add a suite to the registry */
-    pSuite = CU_add_suite("CRTStandardTypes_Suite", init_suite, clean_suite);
+    pSuite = CU_add_suite("StandardTypes_Suite", init_suite, clean_suite);
     if (NULL == pSuite) {
         CU_cleanup_registry();
         return CU_get_error();
@@ -127,6 +136,7 @@ int main(void)
     CU_basic_set_mode(CU_BRM_VERBOSE);
     CU_basic_run_tests();
     CU_basic_set_mode(CU_BRM_SILENT);
+    CU_automated_package_name_set("CRTUnitTests");
     CU_set_output_filename("CRT-Types");
     CU_automated_enable_junit_xml(CU_TRUE);
     CU_automated_run_tests();

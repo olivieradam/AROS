@@ -1,4 +1,4 @@
-# Copyright © 1995-2020, The AROS Development Team. All rights reserved.
+# Copyright © 1995-2021, The AROS Development Team. All rights reserved.
 # $Id$
 #
 # Static makefile rule file for AROS.
@@ -117,6 +117,7 @@ AROS_S                        := $(AROSDIR)/$(AROS_DIR_S)
 AROS_STORAGE                  := $(AROSDIR)/$(AROS_DIR_STORAGE)
 AROS_SYSTEM                   := $(AROSDIR)/$(AROS_DIR_SYSTEM)
 AROS_WANDERER                 := $(AROS_SYSTEM)/Wanderer
+AROS_WALLPAPERS               := $(AROS_PREFS)/Presets/Wallpapers
 AROS_THEMES                   := $(AROS_PREFS)/Presets/Themes
 AROS_IMAGES                   := $(AROS_SYSTEM)/Images
 AROS_TOOLS                    := $(AROSDIR)/$(AROS_DIR_TOOLS)
@@ -244,11 +245,11 @@ else
 endif
 
 # compiler and assembler flags are set depending upon the directory
-CFLAGS                        = $(TARGET_ISA_CFLAGS) $(TARGET_CFLAGS)
-CXXFLAGS                      = $(TARGET_ISA_CXXFLAGS) $(TARGET_CXXFLAGS)
-CPPFLAGS                      = $(TARGET_CPPFLAGS)
-AFLAGS                        = $(TARGET_ISA_AFLAGS) $(USER_AFLAGS) $(CONFIG_AFLAGS)
-LDFLAGS                       = $(USER_LDFLAGS) $(TARGET_LDFLAGS)
+CFLAGS                        = $(strip $(TARGET_ISA_CFLAGS) $(TARGET_CFLAGS))
+CXXFLAGS                      = $(strip $(TARGET_ISA_CXXFLAGS) $(TARGET_CXXFLAGS))
+CPPFLAGS                      = $(strip $(TARGET_CPPFLAGS))
+AFLAGS                        = $(strip $(TARGET_ISA_AFLAGS) $(USER_AFLAGS) $(CONFIG_AFLAGS))
+LDFLAGS                       = $(strip $(USER_LDFLAGS) $(TARGET_LDFLAGS))
 
 # Target arch/CPU-specific options that we can't set in 'configure'
 # (these could be added to CFLAGS instead of using a new variable, except
