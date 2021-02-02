@@ -46,7 +46,7 @@ APTR InternalFormatString(const struct Locale * locale,
     template_pos = 0;           /* Current position in the template string */
     state = OUTPUT;             /* current state of parsing */
     end = FALSE;
-    max_argpos = 1;
+    max_argpos = 0;
     arg_counter = 0;
     max_argpos_datasize = 0;
 
@@ -570,6 +570,9 @@ APTR InternalFormatString(const struct Locale * locale,
             break;
         }
     }
+
+    if (max_argpos == 0)
+        return dataStream;
 
     return (APTR)(ARG(max_argpos) + max_argpos_datasize);
 }
