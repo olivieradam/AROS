@@ -10,7 +10,9 @@ FILES := \
     drawinfoattr \
     gamma \
     monitorclass \
+    movescreen \
     pubscreen \
+    smallscreen \
     screenclass \
     screentest \
     scrollerwin 
