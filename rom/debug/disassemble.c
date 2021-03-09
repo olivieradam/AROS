@@ -1,6 +1,5 @@
 /*
-    Copyright © 2021, The AROS Development Team. All rights reserved.
-    $Id$
+    Copyright (C) 2021, The AROS Development Team. All rights reserved.
 */
 
 #include <aros/debug.h>
@@ -25,9 +24,9 @@
         Initializes a disassembly context for the given inputs.
 
     INPUTS
-        start	- Start address of disassembly
-        end   	- End address of disassembly
-        pc 		- Program Counter value.
+        start   - Start address of disassembly
+        end     - End address of disassembly
+        pc              - Program Counter value.
 
     RESULT
         returns a disassembly context handle.
@@ -46,7 +45,7 @@
 {
     AROS_LIBFUNC_INIT
 
-	return NULL;
+        return NULL;
 
     AROS_LIBFUNC_EXIT
 }
@@ -69,7 +68,7 @@
         Disassemble the next instruction for the given context handle.
 
     INPUTS
-        ctx		- Disassembly context handle.
+        ctx             - Disassembly context handle.
 
     RESULT
         returns the size of the disassembled instruction.
@@ -88,7 +87,7 @@
 {
     AROS_LIBFUNC_INIT
 
-	return 0;
+        return 0;
 
     AROS_LIBFUNC_EXIT
 }
@@ -110,14 +109,14 @@
 
 /*  FUNCTION
         Get the requested attributes for the disasembled
-		instruction, for the specified Disassembly context.
+                instruction, for the specified Disassembly context.
 
     INPUTS
-        ctx		- Disassembly context handle.
-        tags   	- Taglist of requested attributes.
-				DCIT_Instruction_Offset - instructions offset relative to the PC.
-				DCIT_Instruction_HexStr - instruction in hex format
-				DCIT_Instruction_Asm    - disassembled instruction
+        ctx             - Disassembly context handle.
+        tags    - Taglist of requested attributes.
+                                DCIT_Instruction_Offset - instructions offset relative to the PC.
+                                DCIT_Instruction_HexStr - instruction in hex format
+                                DCIT_Instruction_Asm    - disassembled instruction
 
     RESULT
         number of handled attributes.
@@ -136,7 +135,7 @@
 {
     AROS_LIBFUNC_INIT
 
-	return 0;
+        return 0;
 
     AROS_LIBFUNC_EXIT
 }
@@ -159,7 +158,7 @@
         Free the disassemble context
 
     INPUTS
-        ctx		- Disassembly context handle.
+        ctx             - Disassembly context handle.
 
     RESULT
 
@@ -177,7 +176,7 @@
 {
     AROS_LIBFUNC_INIT
 
-	return;
+        return;
 
     AROS_LIBFUNC_EXIT
 }

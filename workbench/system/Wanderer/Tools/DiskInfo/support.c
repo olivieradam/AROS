@@ -1,6 +1,5 @@
 /*
-    Copyright © 2005-2021, The AROS Development Team. All rights reserved.
-    $Id$
+    Copyright (C) 2005-2021, The AROS Development Team. All rights reserved.
 */
 
 #include <exec/memory.h>
@@ -41,7 +40,7 @@ VOID ShowError(Object *application, Object *window, CONST_STRPTR message, BOOL u
             
     MUI_Request
     (
-        application, window, 0, _(MSG_TITLE), _(MSG_ERROR_OK), 
+        application, window, 0, _(MSG_TITLE), _(MSG_ERROR_OK),
         "%s:\n%s%s%s%s", _(MSG_ERROR_HEADER), message, newline, extra, period
     );
 }

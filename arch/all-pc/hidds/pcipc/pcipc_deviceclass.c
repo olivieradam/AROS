@@ -1,9 +1,7 @@
 /*
-    Copyright © 2020-2021, The AROS Development Team. All rights reserved.
-    $Id$
+    Copyright (C) 2020-2021, The AROS Development Team. All rights reserved.
 
     Desc: i386/x86_64 native PCI device support routines.
-    Lang: English
 */
 
 #define DEBUG 1
@@ -171,7 +169,7 @@ void PCIPCDev__Root__Get(OOP_Class *cl, OOP_Object *o, struct pRoot_Get *msg)
                     handled = TRUE;
                     *msg->storage = 1;
 
-                    OOP_GetAttr(o, aHidd_PCIDevice_CapabilityMSI, &capmsi);                    
+                    OOP_GetAttr(o, aHidd_PCIDevice_CapabilityMSI, &capmsi);
                     if (capmsi)
                     {
                         struct pHidd_PCIDevice_ReadConfigWord cmeth;

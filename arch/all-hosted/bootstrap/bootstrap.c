@@ -1,6 +1,5 @@
 /*
-    Copyright © 1995-2021, The AROS Development Team. All rights reserved.
-    $Id$
+    Copyright (C) 1995-2021, The AROS Development Team. All rights reserved.
 */
 
 #include <ctype.h>
@@ -57,8 +56,8 @@
 
 extern void *HostIFace;
 
-/* 
- * External libgcc routine which eventually clears instruction cache. 
+/*
+ * External libgcc routine which eventually clears instruction cache.
  * It is equivalent to gcc's __builtin___clear_cache(void *, void*)
  */
 extern void __clear_cache(void *begin, void *end);

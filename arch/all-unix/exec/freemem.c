@@ -1,9 +1,7 @@
 /*
-    Copyright © 1995-2013, The AROS Development Team. All rights reserved.
-    $Id$
+    Copyright (C) 1995-2013, The AROS Development Team. All rights reserved.
 
     Desc: Free memory allocated by AllocMem()
-    Lang: english
 */
 #include <exec/alerts.h>
 #include <exec/execbase.h>
@@ -32,7 +30,7 @@
 #include "exec_intern.h"
 #include "memory.h"
 
-#undef FreeMem	/* If we're debugging, AROS Clib will try to remap this */
+#undef FreeMem  /* If we're debugging, AROS Clib will try to remap this */
 
 /* See rom/exec/freemem.c for documentation */
 
@@ -49,11 +47,11 @@ AROS_LH2(void, FreeMem,
 
     /* If there is no memory free nothing */
     if(!byteSize || !memoryBlock)
-	ReturnVoid ("FreeMem");
+        ReturnVoid ("FreeMem");
 
     /* In early boot mode we can't free any memory */
     if (!PrivExecBase(SysBase)->defaultPool)
-    	return;
+        return;
 
     FreePooled(PrivExecBase(SysBase)->defaultPool, memoryBlock, byteSize);
 
